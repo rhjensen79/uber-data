@@ -1,0 +1,4 @@
+- select namespace in accelerator
+- repo credentials i ns
+- k8s deployment
+- local deployment docker-compose or tilt or both

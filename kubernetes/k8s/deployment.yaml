@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: python-accelerator
+  name: python-accelerator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: python-accelerator
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: python-accelerator
+        app.kubernetes.io/part-of: python-accelerator
+    spec:
+      containers:
+      - image: python-accelerator:latest
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8080
+        name: app
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8080

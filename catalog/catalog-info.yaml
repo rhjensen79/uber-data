@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: uber-data
+  description: A python app, based on the Streamlit web framework
+  tags:
+  - python
+  - streamlit
+  annotations:
+    backstage.io/kubernetes-label-selector: uber-data
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
