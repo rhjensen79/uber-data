@@ -10,6 +10,6 @@ metadata:
 spec:
   source:
     git:
-      url: https://github.com/TanzuDK/uber-data.git
+      url: https://github.com/rhjensen79/uber-data.git
       ref:
         branch: main
